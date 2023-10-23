@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="prism.css">
+    <style>
+        #responsePre {
+            max-height: 500px;
+            min-height: 150px;
+        }
+    </style>
+    <title>PostWell</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">PostWell</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="showAlert">
+
+    </div>
+    <div class="container">
+        <h3 class="my-3">Welcome To PostWell.com</h3>
+    </div>
+
+    <div class="container">
+
+        <div class="input-group mb-3 my-2">
+            <label for="basic-url" class="form-label">Enter Website URL :</label>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon3">https://example.com</span>
+                <input type="text" class="form-control" id="urlBox" aria-describedby="basic-addon3">
+            </div>
+        </div>
+        <fieldset class="row mb-3">
+            <legend class="col-form-label col-sm-2 pt-0">Request Type :</legend>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="get" value="get" checked>
+                    <label class="form-check-label" for="get">
+                        GET
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="post" value="post">
+                    <label class="form-check-label" for="post">
+                        POST
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset class="row mb-3">
+            <legend class="col-form-label col-sm-2 pt-0">Content Type :</legend>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="containtRadios" id="json" value="JSON" checked>
+                    <label class="form-check-label" for="json">
+                        JSON
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="containtRadios" id="coustom" value="params">
+                    <label class="form-check-label" for="coustom">
+                        Coustom Parameters
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+        <form id="paraBox">
+            <div class="row" id="parameterBox1">
+                <label for="url" class="col-sm-2 col-form-label">Parameter 1</label>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Enter Parameter 1 Key" id="parameterValue1">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Enter Parameter 1 value" id="parameterKey1">
+                </div>
+                <div class="col-auto">
+                    <button id="addParam" class="btn btn-primary">+</button>
+                </div>
+
+            </div>
+        </form>
+        <div id="params">
+        </div>
+        <div class="input-group mb-3 my-4 " id="jsonBox">
+            <span class="input-group-text">Enter Request JSON</span>
+            <textarea class="form-control" aria-label="With textarea" id="jsonBoxText"></textarea>
+        </div>
+        <button class="btn btn-primary my-3" id="submit">Submit</button>
+        <hr>
+        <div class="my-3" id="responseJsonBox">
+            <div class="form-group row">
+                <label for="responseJsonText" class="col-sm-2 col-form-label">Response</label>
+                <div class="col-sm-10">
+                    <pre id='responsePre'
+                        class="language-javascript"> <code id='responsePrism' class="language-javascript"> Your Response Will Appear Here</code> </pre>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <script src="prism.js"></script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
